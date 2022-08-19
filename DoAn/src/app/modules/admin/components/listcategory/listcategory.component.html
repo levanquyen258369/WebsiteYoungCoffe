@@ -1,0 +1,51 @@
+
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+
+      <div class="container" style="padding: 0; position: relative">
+          <div th:include="layout_admin/navi_bar:: navi_bar"></div>
+          <div class="container">
+            <h1 class="title">Danh Sách Danh Mục</h1>
+            <div style="display: flex; justify-content: space-between">
+                <div class="add-button">
+                    <a class="btn btn-primary" routerLink="/admin/categories">Thêm Danh Mục</a>
+                </div>
+                <div class="search_box pull-right">
+                    <div class="input-group">
+                        <form>
+                            <label>Tìm Kiếm: </label>
+                            <input type="text" name="keyword" id="keyword" size="50" [(ngModel)]="keyword"/>
+                            <button (click)="loadSearching(keyword)" style="margin-left: 20px;margin-top: -20px; width: 80px; text-align: center;"class="btn btn-dark" >
+                              Tìm kiếm
+                            </button>
+                            <button (click)="loadCateory()" class="btn btn-dark" style="width: 80px;margin-left: 20px;margin-top: -20px;">Danh sách</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+              <table class="table table-bordered">
+                  <thead>
+                    <tr style="text-align: center">
+                        <th><a> Mã Danh Mục</a></th>
+                        <th>Tên Danh Mục</th>
+                        <th>Trạng Thái</th>
+                        <th style="text-align: center">Tùy Chỉnh</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let p of data let i = index">
+                  <tr >
+                      <td>{{p.categoryId}}</td>
+                      <td>{{p.categoryName}}</td>
+                      <td>{{p.status}}</td>
+                      <td class="td-button">
+                        <!-- (click)="editcate(p.categoryId)" -->
+                          <a routerLink="/admin/editcategory/{{p.categoryId}}"  class="btn btn-primary btn-sm">Chỉnh Sửa</a>
+                          <a (click)="deleteCate(p.categoryId)" class="btn btn-danger btn-sm">Xóa</a>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+      <div class="container" style="padding: 0; position: relative">
+          <div class="container">
+              <div class="row"
+                   style="border: 3px darkgrey solid; border-radius: 10px; width: 50%; margin: 50px auto; padding: 20px;">
+                  <div class="col-sm-12">
+                      <h2 class="title">Thêm Danh Mục</h2>
+                      <form method="post" enctype="multipart/form-data" [formGroup]="formAddCategory" (ngSubmit)="addCategory()">
+                          <div class="form-group">
+                              <label>Tên Danh Mục</label>
+                              <input field="" type="text" class="form-control"
+                                     name="categoryName" placeholder="Nhập tên danh mục" id="categoryName" formControlName="categoryName">
+                              <p style="color: red" *ngIf="formAddCategory.get('categoryName')?.errors?.['required'] && formAddCategory.get('categoryName')?.dirty">Vui lòng nhập tên danh mục</p>
+                              <label>Trạng Thái</label> <br>
+                              <input name="status" type="radio" value="true" formControlName="status"> Kích Hoạt |
+                              <input name="status" type="radio" value="false" formControlName="status"> Hủy Kích Hoạt
+                          </div>
+                          <br>
+                          <div class="flex-button">
+                            <button [disabled]="formAddCategory.invalid" type="submit" class="btn btn-primary">Lưu</button>
+
+                            <button class="btn btn-primary" style="margin-top:15px;" routerLink="/admin/listcategory">Xem danh sách danh mục</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

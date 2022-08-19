@@ -1,0 +1,60 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+    <div></div>
+    <div class="container" style="padding: 0; position: relative">
+      <div></div>
+      <div class="container">
+        <h1 style="font-family: cursive; color: orange;">Danh Sách Đơn Hàng</h1>
+        <div class="search_box pull-right" style="margin-bottom: 10px">
+          <div class="input-group">
+            <form>
+              <div class="form-group col-3">
+                <h5>Tìm Kiếm:</h5> <input style="width: 150%" type="text" name="keyword" id="keyword" size="50" [(ngModel)]="keyword" />
+              </div>
+              <button (click)=" loadSearching(keyword)" class="btn btn-primary btn-sm" style="height: 39px;width: 70px; margin-top: 0px; margin-left: 100px;">Submit</button>
+
+            </form>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr style="text-align: center">
+              <th style="text-align: center">Mã Đơn Hàng</th>
+              <th style="text-align: center">Tên người mua</th>
+              <th style="text-align: center">Địa Chỉ</th>
+              <th style="text-align: center">Số điện thoại</th>
+              <th style="text-align: center">Email</th>
+              <th style="text-align: center">Tên Sản Phẩm</th>
+              <th style="text-align: center">Ảnh</th>
+              <th style="text-align: center">Số lượng</th>
+              <th style="text-align: center">Thuế</th>
+              <th style="text-align: center">Tổng Tiền</th>
+              <th style="text-align: center">Tùy Chỉnh</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of listOrdersdetails let i = index ">
+              <td>{{p.orderDetailId}}</td>
+              <td>{{p.orders.fullName}}</td>
+              <td>{{p.orders.address}}</td>
+              <td>{{p.orders.phone}}</td>
+              <td>{{p.orders.email}}</td>
+              <td>{{p.product.productName}}</td>
+              <td>
+                <img src="{{p.product.productImage}}" alt="" style="width:50%;">
+              </td>
+              <td>{{p.quantity}}</td>
+              <td>2.99%</td>
+              <td>{{p.orders.total | number:"1.0"}}</td>
+              <td style="text-align: center">
+                <button (click)="deleteOrderDetails(p.orderDetailId)"  class="btn btn-danger btn-sm"  style="margin-top: 0">Xóa</button>
+                <!-- <button type="button" class="btn btn-success btn-sm" style="margin-top: 10px;" (click)="reloadCurrentPage()">Update</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

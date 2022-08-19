@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="form-popup" id="myForm">
+      <h2 style="text-align: center; margin-bottom: 20px;">Thông tin đơn hàng</h2>
+      <form action="/action_pag.php" class="form-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 ">
+              <form method="post" enctype="multipart/form-data" >
+                <div class="row px-2">
+                  <div class="form-group col-md-6">
+                    <label class="form-control-label">Tên tài khoản:</label>
+
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-control-label">Họ và Tên:</label>
+
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-control-label">Số Điện Thoại:</label>
+
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-control-label">Địa Chỉ:</label>
+
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-control-label">Email:</label>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-5 mt-2">
+              <div class="cart-shoppping"  >
+                <ul class="shopping-cart-items" >
+                  <li class="clearfix">
+                    <img src="/productImage" alt="item1" style="width: 50%;" />
+                    <span class="item-name">productName</span>
+                    <span class="item-price">shop_product.price</span>
+                    <br>
+                    <span class="item-quantity">c.quantity</span>
+                  </li>
+                </ul>
+              </div>
+              <form method="post" enctype="multipart/form-data" >
+
+                <div class="row d-flex justify-content-between px-4">
+                  <p class="mb-1 text-left">Tổng tiền :</p>
+                  <h6 class="mb-1 text-right" style="margin-top: -27px;"></h6>
+                </div>
+                <div class="row d-flex justify-content-between px-4">
+                  <p class="mb-1 text-left">Thuế (VAT):</p>
+                  <h6 class="mb-1 text-right" style="margin-top: -27px;">2.99 %</h6>
+                </div>
+                <div class="row d-flex justify-content-between px-4" id="tax">
+                  <p class="mb-1 text-left">Tổng số tiền thanh toán :</p>
+                  <h6 class="mb-1 text-right" style="margin-top: -27px;"></h6>
+                </div>
+                <button class="btn-block btn-blue"  type="submit">
+                  <a href="javascript:void(0)">
+
+                    <span id="checkout">Thanh Toán</span>
+                    <span id="check-amt"> &nbsp;VNĐ</span>
+
+                  </a>
+                </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+</div>

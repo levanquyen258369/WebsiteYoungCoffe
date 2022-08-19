@@ -1,0 +1,38 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+      <div th:include="layout_admin/nav_bar:: nav_bar"></div>
+      <div class="container" style="padding: 0; position: relative">
+          <div th:include="layout_admin/navi_bar:: navi_bar"></div>
+          <div class="container">
+              <div class="row" style="border: 1px darkgrey solid; border-radius: 10px; width: 50%; margin: 0 auto; padding: 20px;">
+                  <div class="col-sm-12">
+                      <h2>Sửa danh mục</h2>
+                      <form method="post" enctype="multipart/form-data" [formGroup]="formEditCategory" (ngSubmit)="editCategory()">
+                          <div class="form-group">
+                              <label>Mã danh mục</label>
+                              <input class="form-control" name="categoryId" placeholder="Nhập mã danh mục" id="categoryId" readonly formControlName="categoryId">
+                          </div>
+                          <div class="form-group">
+                              <label>Tên danh mục</label>
+                              <input class="form-control" name="categoryName" placeholder="Nhập tên danh mục" id="categoryName" value="" required formControlName="categoryName">
+                              <p style="color: red" *ngIf="formEditCategory.get('categoryName')?.errors?.['required'] && formEditCategory.get('categoryName')?.dirty">Vui lòng nhập tên danh mục</p>
+                          </div>
+                          <div class="form-group">
+                            <label>Trạng thái</label> <br>
+                            <input name="status" type="radio" value="true" required formControlName="status"> Kích hoạt |
+                            <input name="status" type="radio" value="false" required formControlName="status"> Hủy kích hoạt
+                        </div>
+                          <br>
+                          <div class="editButton">
+                            <button [disabled]="formEditCategory.invalid" type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                            <br>
+                            <button class="btn btn-primary" style="margin-top: 15px;" routerLink="/admin/listcategory">Xem danh sách danh mục</button>
+                          </div>
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

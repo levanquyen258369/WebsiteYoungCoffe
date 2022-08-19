@@ -1,0 +1,194 @@
+.image-icon-user {
+  margin-left: 130px ;
+
+}
+
+#inp[type=text] {
+  background-image: url('/assets/img/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+}
+
+#inp[type=text] {
+  width: 0px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #333333;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  color: #BBB;
+  position: absolute;
+  margin-left: 40%;
+}
+
+#inp[type=text]:focus {
+  width: 20%;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+}
+
+.search-top {
+  position: absolute;
+  margin-left: 150px;
+}
+
+/* <-->////////////////// */
+
+.lighter-text {
+  color: #ABB0BE;
+}
+.main-color-text {
+  color: #6394F8;
+}
+nav {
+  padding: 20px 0 40px 0;
+
+  font-size: 16px;
+}
+nav ul li {
+    display: inline;
+    padding-left: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+
+.shopping-cart {
+    margin: 20px 0;
+    float: right;
+    background: white;
+    width: 320px;
+    position: relative;
+    border-radius: 3px;
+    padding: 20px;
+}
+.shopping-cart .shopping-cart-header {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 15px;
+}
+.shopping-cart .shopping-cart-header .shopping-cart-total {
+    float: right;
+}
+.shopping-cart .shopping-cart-items {
+    padding-top: 20px;
+}
+.shopping-cart .shopping-cart-items li {
+    margin-bottom: 18px;
+}
+.shopping-cart .shopping-cart-items img {
+    float: left;
+    margin-right: 12px;
+}
+.shopping-cart .shopping-cart-items .item-name {
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+    margin: -10px;
+
+}
+.shopping-cart .shopping-cart-items .item-price {
+    color: #6394F8;
+    margin-right: 8px;
+}
+.shopping-cart .shopping-cart-items .item-quantity {
+    color: #ABB0BE;
+}
+.shopping-cart:after {
+    bottom: 100%;
+    left: 89%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: white;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.cart-icon {
+    color: #515783;
+    font-size: 24px;
+    margin-right: 7px;
+    float: left;
+}
+.button {
+    background: #6394F8;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    border-radius: 3px;
+    font-size: 16px;
+    margin: 25px 0 15px 0;
+}
+.button:hover {
+    background: #729ef9;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+/* Nút Dropdown*/
+ .nut_dropdown {
+   background-color: #0080ff;
+   color: white;
+   padding: 16px;
+   font-size: 16px;
+   border: none;
+ }
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+ /* .dropdown {
+   position: relative;
+   display: inline-block;
+ } */
+/* Nội dung Dropdown */
+ .noidung_dropdown {
+   /*Ẩn nội dung các đường dẫn*/
+   display: none;
+   position: absolute;
+   background-color: #f1f1f1;
+   min-width: 120px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+ }
+/* Thiết kế style cho các đường dẫn trong Dropdown */
+ .noidung_dropdown a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+    border: 1px black solid;
+
+
+ }
+ /* thay đổi màu background khi hover vào đường dẫn */
+ .noidung_dropdown a:hover {
+  background-color:  #3a3f41;
+  color: white;
+}
+/* hiển thị nội dung dropdown khi hover */
+ .dropdown:hover .noidung_dropdown {display: block;}
+/* Thay đổi màu background cho nút khi được hover */
+ .dropdown:hover .nut_dropdown {color: #00bfff;}
+
+
+
+
+

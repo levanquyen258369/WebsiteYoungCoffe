@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-2">
+          <div><strong>Các Loại Sản Phẩm</strong></div>
+          <div>
+              <div class="dropdown" >
+                <!-- <a >Cửa Hàng</a> -->
+                  <button class="dropbtn">
+                    Cửa Hàng
+                    <div class="dropdown-content" >
+
+                      <!-- <a routerLink="/user/shop">Cửa Hàng</a> -->
+                      <a *ngFor="let c of categories" (click)="getProductByCategoryId(c.categoryId)" >
+                        {{c.categoryName}}
+                      </a>
+                      <!-- <a >Trà</a>
+                      <a >Cốc</a>
+                      <a >Thiết Bị</a>
+                      <a >Giảm Giá</a> -->
+                      <!-- (click)="getProductByCategoryId()" -->
+                  </div>
+                  </button>
+
+              </div>
+          </div>
+          <div></div>
+          <div></div>
+      </div>
+      <div class="col-md-10">
+        <div class="container">
+          <div class="row">
+            <div class="col-8"></div>
+            <div class="col-2">
+              <button class="btn btn-dark btn-light" (click)="ascProduct()" style="margin-top: 15px;">Giá từ thấp -> cao</button>
+            </div>
+            <div class="col-2">
+              <button class="btn btn-info" (click)="descProduct()"  style="margin-top: 15px;">  Giá từ cao -> thấp</button>
+            </div>
+          </div>
+        </div>
+
+          <!-- <div class="form-group" style="text-align: right" id="Newest">
+
+          </div> -->
+          <hr>
+          <div class="row">
+              <div class="container-fluid">
+                  <div class="row">
+                      <!--1-->
+                      <div class="col-lg-4" *ngFor=" let p of shop_product">
+                          <div class="incon4">
+                              <div class="container ">
+                                  <img src="{{p.productImage}}" alt="" width="105%" style="" [title]="p.productName + 'details'" [routerLink]="['/user/product-details',p.productId]">
+                                  <div class="textbox" style="padding-top: 10px">
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <span style="padding-right: 20px;margin-left: -22px"><img class="icon10" src="assets/img/icon-heart-round.png" ></span>
+                                              <span><a  class="incon3"><img class="icon11" src="assets/img/icon-compare-round.png" style="color: #0f0f0f;" ></a></span>
+                                          </div>
+                                          <div class="col-md-12" style="padding-top: 20px;text-align: center">
+                                              <p class="incon1">
+                                                  <a href="#"><img src="assets/img/icon-cart-round.png"></a>
+                                                  <span style="color: #c44e0f">
+                                                    <a href="javascript:void(0)" (click)="buy(p)" class="add-to-cart">Mua Hàng</a>
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <p style="font-family: 'Arial Black';color: #0f0f0f;text-align: center;font-size: 18px">{{p.productName}}<br>
+                                  {{p.price | number:"1.0"}}&nbsp;VNĐ
+                              </p>
+                          </div>
+                      </div>
+                      <!--2-->
+
+                      <!--3-->
+
+                      <!-- //Phân trang -->
+              <!-- <div class="pagination">
+                  <a href="#">&laquo;</a>
+                  <a href="#" class="active">1</a>
+                  <a href="#" >2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">&raquo;</a>
+              </div> -->
+          </div>
+      </div>
+  </div>
+</div>

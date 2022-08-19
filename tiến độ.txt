@@ -1,0 +1,21 @@
+
+- Lấy giao diện Admin và giao diện người dùng (1)
+- Tạo project, ghép giao diện(1)
+- Phân tích CSDL SQL, tạo bảng (1)
+- Code chức năng quản trị:
++ Đăng nhập (0)
++ Module thêm sửa xóa các bảng cơ bản(Categories, Products, Customers, Providers, Slides, Blogs, ... ) (1)
+- Code chức năng người dùng:
++ Đăng nhập, đăng ký (0)
++ Hiển thị danh mục lên menu (1)
++ Hiển thị thông tin, xem chi tiết sản phẩm (1)
+- Code chức năng người dùng
++ Mua hàng(1)
++ Xem lịch sử mua hàng(1)
+- Code chức năng quản trị(0)
++ Xử lý, cập nhật trạng thái đơn hàng(1)
+-Xử lý lọc tìm kiếm, phân trang(0)
+  +Validate dữ liệu trên các form nhập(1)
+
+
+         

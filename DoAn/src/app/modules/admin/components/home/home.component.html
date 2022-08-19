@@ -1,0 +1,47 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <h1 class="tieude-thong"> TRANG THỐNG KÊ</h1>
+  <div class="container">
+    <div class="row">
+      <!-- <ul>
+        <li>
+            <p >Tổng Số Khách Hàng: {{counter}}</p>
+        </li>
+        <li>
+            <p>Tổng Số Đơn Hàng: {{counter1}} </p>
+        </li>
+        <li>
+            <p>Tổng Thu Nhập: {{subtotalAll}}</p>
+        </li>
+      </ul> -->
+
+      <table class="table table-bordered">
+        <thead>
+        <tr >
+            <th style="text-align: center; background-color: orange; color: black; font-size: 20px;">Tổng Số Khách Hàng</th>
+            <th style="text-align: center; background-color: burlywood; color: black;font-size: 20px;">Tổng Số Đơn Hàng</th>
+            <th style="text-align: center; background-color: rgb(98, 132, 53); color: #fff;font-size: 20px;">Tổng Thu Nhập</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="khachhang" style="font-size: 50px; font-weight: bold;" >
+              <i class="fa fa-user"></i>
+              {{counter}}
+            </td>
+            <td class="donhang" style="font-size: 50px; font-weight: bold;">
+              <i class="fas fa-cart-plus"></i>
+              {{counter1}}
+            </td>
+            <td class="thunhap" style="font-size: 50px; font-weight: bold;">
+
+              <i class="fa fa-money-bill"></i>
+              {{totalAall | number:"1.0"}}
+            </td>
+        </tr>
+        <tbody>
+    </table>
+    </div>
+  </div>
+</div>
+

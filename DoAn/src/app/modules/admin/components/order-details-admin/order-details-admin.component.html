@@ -1,0 +1,46 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+      <div th:include="layout_admin/nav_bar:: nav_bar"></div>
+      <div class="container" style="padding: 0">
+          <div class="orderdetailss" >
+            <div class="container">
+              <h2>Chi Tiết Đơn Hàng</h2>
+              <div class="tennguoimua"  >
+                <div class="container">
+                    <div class="row">
+                      <ul>
+                        <li type="1">Tên Người Mua:  </li>
+                        <li type="1">Số điện thoại: </li>
+                        <li type="1">Địa chỉ: </li>
+                        <li type="1">Email:  </li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+              <table class="table table-bordered">
+                  <thead>
+                  <tr style="text-align: center; background-color: orange; color: #fff">
+                      <th>Tên Sản Phẩm</th>
+                      <th>Ảnh</th>
+                      <th>Số Lượng</th>
+                      <th>Giá Tiền</th>
+                      <th>Tổng Tiền</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td ></td>
+                      <td><img th:src="@{${orderDetail.product.image}}" style="width: 50px"></td>
+                      <td >{{this.data.quantity}}</td>
+                      <td ></td>
+                      <td></td>
+                  </tr>
+                  <tbody>
+              </table>
+
+          </div>
+          </div>
+
+      </div>
+  </div>
+</div>

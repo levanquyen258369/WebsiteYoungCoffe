@@ -1,0 +1,98 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+    <div th:include="layout_admin/nav_bar:: nav_bar"></div>
+    <div class="container" style="padding: 0; position: relative">
+      <div th:include="layout_admin/navi_bar:: navi_bar"></div>
+      <div class="container row">
+        <div class="row col-sm-6" style="border: 1px darkgrey solid; border-radius: 10px; margin: 0; padding: 20px;">
+          <div class="col-sm-12">
+            <div style="display: flex; justify-content: space-between;">
+              <h2 class="myclass">Chỉnh sửa sản phẩm</h2>
+            </div>
+            <form method="post" enctype="multipart/form-data" [formGroup]="formEditProduct" (ngSubmit)="editProduct()">
+              <div class="form-group">
+                <label>Mã Sản Phẩm</label>
+                <input  type="text" class="form-control" name="productId" placeholder="Enter name" id="productId"
+                  value="" readonly formControlName="productId">
+              </div>
+              <div class="form-group">
+                <label>Tên Sản Phẩm</label>
+                <input type="text" class="form-control" name="productName" placeholder="Nhập tên sản phẩm"
+                  id="name" value="" required formControlName="productName">
+                  <p style="color: red" *ngIf="formEditProduct.get('productName')?.errors?.['required'] && formEditProduct.get('productName')?.dirty">Vui lòng nhập tên danh mục</p>
+              </div>
+              <div class="form-group">
+                <label>Mô Tả</label>
+                <input  type="text" class="form-control" name="description" placeholder="Nhập mô tả sản phẩm"
+                  id="description" value="" required formControlName="description">
+                  <p style="color: red" *ngIf="formEditProduct.get('description')?.errors?.['required'] && formEditProduct.get('description')?.dirty">Vui lòng nhập tên danh mục</p>
+              </div>
+              <br>
+              <div class="form-group">
+                <label>Danh Mục</label>
+                <input type="text" class="form-control" name="categoryId" placeholder="Nhập mã danh mục"
+                id="categoryId" value="" required formControlName="categoryId">
+                <p style="color: red" *ngIf="formEditProduct.get('categoryId')?.errors?.['required'] && formEditProduct.get('categoryId')?.dirty">Vui lòng nhập tên danh mục</p>
+              </div>
+              <div class="form-group">
+                <label>Ảnh</label>
+                <input type="text" class="form-control" name="productImage" placeholder="Nhập đường dẫn ảnh"
+                  id="productImage" formControlName="productImage">
+                <p style="color: red"
+                  *ngIf="formEditProduct.get('productImage')?.errors?.['required'] && formEditProduct.get('productImage')?.dirty">
+                  Vui lòng nhập đường dẫn ảnh sản phẩm</p>
+              </div>
+              <div class="form-group">
+                <label>Giá</label>
+                <input  type="text" class="form-control" name="price" placeholder="nhập giá sản phẩm"
+                  id="price" value="" required formControlName="price">
+                  <p style="color: red"
+                  *ngIf="formEditProduct.get('price')?.errors?.['required'] && formEditProduct.get('price')?.dirty">
+                  Vui lòng nhập giá sản phẩm</p>
+              </div>
+
+
+              <div class="form-group">
+                <label>Số lượng</label>
+                <input  type="text" class="form-control" name="quantity" placeholder="Enter name"
+                  id="quantity" value="" required formControlName="quantity">
+                  <p style="color: red"
+                  *ngIf="formEditProduct.get('quantity')?.errors?.['required'] && formEditProduct.get('quantity')?.dirty">
+                  Vui lòng nhập số lượng sản phẩm</p>
+              </div>
+              <div class="form-group">
+                <label>Hạn Sử Dụng</label>
+                <input type="date" class="form-control" name="exprity" placeholder="Nhập hạn sử dụng " id="exprity"
+                  formControlName="exprity">
+                <p style="color: red"
+                  *ngIf="formEditProduct.get('exprity')?.errors?.['required'] && formEditProduct.get('exprity')?.dirty">
+                  Vui lòng nhập hạn sử dụng của sản phẩm</p>
+              </div>
+              <div class="form-group">
+                <label>Nơi Sản Xuất</label>
+                <input type="text" class="form-control" name="madeIn" placeholder="Nhập nơi sản xuất" id="madeIn"
+                  formControlName="madeIn">
+                <p style="color: red"
+                  *ngIf="formEditProduct.get('madeIn')?.errors?.['required'] && formEditProduct.get('madeIn')?.dirty"> Vui
+                  lòng nhập nơi sản xuất</p>
+              </div>
+              <div class="form-group">
+                <label>Trạng thái</label> <br>
+                <input name="status" type="radio" value="true" required formControlName="status"> Kích hoạt |
+                <input name="status" type="radio" value="false" required formControlName="status"> Hủy kích hoạt
+              </div>
+              <div class="editButton">
+                <!-- [disabled]="formEditProduct.invalid" -->
+                <button [disabled]="formEditProduct.invalid" type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                <br>
+                <button class="btn btn-primary" style="margin-top: 15px;" routerLink="/admin/listcategory">Xem danh sách
+                  danh mục</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

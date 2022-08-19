@@ -1,0 +1,181 @@
+<!-- START Site Header -->
+<header id="single-page-header">
+  <!-- START Site Preloader
+<div id="hungry-preloader-container">
+  <div class="hungry-preloader">
+      <span class="bubble-01"></span>
+      <span class="bubble-02"></span>
+      <span class="bubble-03"></span>
+  </div>
+</div> -->
+  <!-- END Site Preloader-->
+  <div class="site-navbar">
+    <div class="grid-container">
+      <div class="row">
+        <!-- START Site Logo -->
+        <div class="grid-20 tablet-grid-50 mobile-grid-50 col-1">
+          <a href="index.html">
+            <img class="site-logo" src="assets/img/Young.png" alt="Site Logo" />
+          </a>
+        </div>
+        <!-- END Site Logo -->
+
+        <!-- START Navigation -->
+        <div class="nav-container grid-80 tablet-grid-50 mobile-grid-50 col-6">
+          <nav class="main-navigation" role="navigation">
+            <!-- Main Navigation -->
+            <ul class="sf-menu" style="margin-top: 10px;margin-right: 15%">
+              <li><a routerLink="/user/home">Trang Chủ</a></li>
+              <li><a routerLink="/user/shop">Cửa Hàng</a></li>
+              <li><a routerLink="/user/contact">Liên Hệ</a></li>
+
+            </ul>
+          </nav>
+        </div>
+
+        <div class="nav-container grid-60 tablet-grid-40 mobile-grid-30 col-5" style="margin-top: 70px;">
+          <div class="row">
+            <div id="navbar" class="navbar-collapse " style="height: 100px;">
+              <nav class="main-navigation" role="navigation">
+                <div class="col-3 " style="margin-left: 10%;">
+                  <div class="nav-item">
+                    <a id="cart">
+                      <i class="fa fa-heart" style="color: white; margin-top: 20px; margin-left: 80px; "></i><span
+                        class="badge badge-danger">{{dataNumber}}</span>
+                    </a>
+                    <div class="shopping-cart" id="showcart">
+                      <div class="shopping-cart-header">
+                        <i class="fa fa-heart" style="color: blue;"></i><span
+                          class="badge badge-danger">{{dataNumber}}</span>
+                        <div class="shopping-cart-total">
+                          <span class="lighter-text">Giỏ Hàng:</span>
+                          <span class="main-color-text"></span>
+                        </div>
+                      </div>
+                      <!--end shopping-cart-header -->
+                      <!-- *ngFor="let c of dataCart1" -->
+                      <div class="cart-shoppping"  >
+                        <ul class="shopping-cart-items" *ngFor="let c of dataCart">
+                          <li class="clearfix">
+                            <img src="{{c.shop_product.productImage}}" alt="item1" style="width: 50%;" />
+                            <span class="item-name">{{c.shop_product.productName}}</span>
+                            <span class="item-price">{{c.shop_product.price}}</span>
+                            <br>
+                            <span class="item-quantity">{{c.quantity}}</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <a routerLink="/user/cart" class="button">Checkout</a>
+                    </div>
+                    <!--end shopping-cart -->
+
+                  </div>
+
+                </div>
+                <div class="col-3">
+                  <div class="nav-item">
+                    <a routerLink="/user/cart" class="nav-link">
+                      <i class="fas fa-cart-plus"
+                        style="float: right;position: absolute; margin-left: 0%; margin-top: -28px; color: white; ">
+                        <div class="badge badge-danger">{{dataNumber}}</div>
+                      </i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-3 image-icon-user">
+                  <div class="nav-item dropdown">
+                    <form class="drop">
+                      <label style="font-size: 130%;">
+                        <i class="fa fa-user "
+                          style="float: right;position: absolute; margin-left: 100px; margin-top: -45px;size: 100px; color: white;">{{p}}</i>
+                      </label>
+                      <div class="noidung_dropdown">
+                        <a routerLink="/user/thongtin/159" class="nav-link">
+                          Thông tin tài khoản
+                        </a>
+                       <a  *ngIf="user1.isAdmin == true " (click)="quanLy()">Quản Lý</a>
+                       <a routerLink="/user/login" class="nav-link">
+                          Đăng Nhập
+                        </a>
+                        <a routerLink="/user/register" class="nav-link">
+                          Đăng Ký
+                        </a>
+                        <a routerLink="/user/home" (click)="dangXuat()" class="nav-link">Đăng xuất</a>
+                      </div>
+
+                    </form>
+                    <!-- <div class="dropdown-content">
+
+                    </div> -->
+                  </div>
+
+                </div>
+                <div class="search-top col-3">
+                  <!-- <form id="search" >
+                     <input id="inp" type="text" name="search" placeholder="Search..">
+                  </form> -->
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- END Navigation -->
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="single-page-header-content">
+    <div class="cycle-slideshow" data-cycle-swipe="true" data-cycle-swipe-fx="fade" data-cycle-fx="fade"
+      data-cycle-speed="1200" data-cycle-timeout="16000">
+      <img src="assets/img/slide-1.jpg" alt="Slide Image 01" style="width:100%;" />
+      <div class="cycle-prev"><i class="fa fa-chevron-left"></i></div>
+      <div class="cycle-next"><i class="fa fa-chevron-right"></i></div>
+    </div>
+    <div class="single-page-header-text">
+      <div class="wow fadeInDown" data-wow-duration="2s" data-wow-offset="250">
+        <header class="section-heading">
+          <h2 class="section-heading-title" style="color: white;">Wellcome</h2>
+          <div class="section-heading-subtitle-container tilt-left">
+            <h4 class="section-heading-subtitle">Young coffee..^.^..</h4>
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+
+  <!-- START Social Icons -->
+  <div class="single-page-social-icons">
+    <ul class="single-page-social-icons-list">
+      <li><a href="#" class="header-social-icon-tooltip" title="We're on FaceBook!"><i class="fa fa-cutlery"><img
+              src="assets/img/ml-1.png" class="phaybuc" width="120%" height="42px"
+              style="margin-top: -7.5px;margin-left: -2.3px;"></i></a></li>
+      <li><a href="#" class="header-social-icon-tooltip" title="We're on Google!"><i class="fa fa-cutlery"><img
+              src="assets/img/ml-2.png" width="120%" height="42px"
+              style="margin-top: -7.5px;margin-left: -2.3px"></i></a></li>
+      <li><a href="#" class="header-social-icon-tooltip" title="We're on Insatagram!"><i class="fa fa-cutlery"><img
+              src="assets/img/ml-3.png" width="120%" height="42px"
+              style="margin-top: -7.5px;margin-left: -2.3px"></i></a></li>
+      <li><a href="#" class="header-social-icon-tooltip" title="We're on Twitter!"><i class="fa fa-cutlery"><img
+              src="assets/img/ml-4.png" width="120%" height="42px"
+              style="margin-top: -7.5px;margin-left: -2.3px"></i></a></li>
+      <li><a href="#" class="header-social-icon-tooltip" title="We're on  Wonder!"><i class="fa fa-cutlery"><img
+              src="assets/img/ml-5.png" width="120%" height="42px"
+              style="margin-top: -7.5px;margin-left: -2.3px"></i></a></li>
+
+    </ul>
+  </div>
+
+    <!-- <div class="fon"><h3>KẾT NỐI MẠNG XÃ HỘI</h3></div><br>
+    <a href="#"><img src="assets/img/facebook1.jpg" onmouseover="this.src='assets/img/facebook.jpg'" onmouseout="this.src='assets/img/facebook1.jpg'" width="15%"/></a>
+    <a href="#"><img src="assets/img/Instagram1.jpg" onmouseover="this.src='assets/img/Instagram.jpg'" onmouseout="this.src='assets/img/Instagram1.jpg'" width="15%"/></a>
+    <a href="#"><img src="assets/img/Skype1.jpg" onmouseover="this.src='assets/img/Skype.jpg'" onmouseout="this.src='assets/img/Skype1.jpg'" width="15%"/></a>
+    <a href="#"><img src="assets/img/Linkedin1.jpg" onmouseover="this.src='assets/mg/Linkedin.jpg'" onmouseout="this.src='assets/img/Linkedin1.jpg'" width="15%"/></a>
+    <a href="#"><img src="assets/img/twitter1.jpg" onmouseover="this.src='assets/img/twitter.jpg'" onmouseout="this.src='assets/img/twitter1.jpg'" width="15%"/></a>
+    <a href="#"><img src="assets/img/GG1.jpg" onmouseover="this.src='assets/img/GG.jpg'" onmouseout="this.src='assets/img/GG1.jpg'" width="15%"/></a> -->
+
+  <!-- END Social Icons -->
+  <!-- <div id="single-page-header:after"></div> -->
+</header>

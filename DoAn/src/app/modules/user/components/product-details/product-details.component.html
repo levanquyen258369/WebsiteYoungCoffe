@@ -1,0 +1,98 @@
+<div class="container-fluid" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{data.productImage}}" width="100%" height="450px" style="margin-left:-15px; margin-right: 40px;">
+        </div>
+        <div class="col-md-8">
+          <!--<div>DECAF COSTARICA</div>-->
+          <div class="section-heading-title" style="font-size: 70px;text-align: center">{{data.productName}}</div>
+          <hr>
+          <blockquote style="font-size: 15px">
+            Giới thiệu: &nbsp;
+            {{data.productName}}
+            <br>
+            {{data.description}}
+            <br>
+            <p>Hạn sử dụng: {{data.exprity}}</p>
+          </blockquote>
+          <hr>
+          <div class="col-md-12">
+            <!--<div id="stars">-->
+            <!--<span >&#9734</span><span >&#9734</span><span >&#9734</span><span >&#9734</span><span >&#9734</span>-->
+            <!--</div>-->
+            <div class="row">
+              <div class="col-md-3" style="font-size: 20px">
+
+              </div>
+              <div class="col-md-9">
+                <div class="rw-ui-container"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md -12" style="margin-left: 15px;padding-top: 50px;font-size: 20px">
+            <div class="row">
+              <div class="col-md-3" style="">
+                Tên Sản phẩm:
+              </div>
+              <div class="col-md-9" style="color: #0f0f0f">
+                {{data.productName}}
+              </div>
+            </div>
+            <div class="col-md -12" style="padding-top: 20px;font-size: 20px">
+              <div class="row">
+                <div class="col-md-3" style="">
+                  Số lượng tồn kho:
+                </div>
+                <div class="col-md-9" style="color: #0f0f0f">
+                  {{data.quantity}}
+                </div>
+              </div>
+              <div class="col-md -12" style="padding-top: 20px;font-size: 20px">
+                <div class="row">
+                  <div class="col-md-3" style="">
+                    Giá sản phẩm:
+                  </div>
+                  <div class="col-md-9">
+                    {{data.price | number: "1.0-2" }}
+                  </div>
+                </div>
+                <div class="col-md -12" style="padding-top: 20px;font-size: 20px">
+                  <div class="row">
+                    <div class="col-md-3" style="">
+                      Nguồn gốc:
+                    </div>
+                    <div class="col-md-9">
+                      {{data.madeIn}}
+                    </div>
+                  </div>
+                <hr>
+                <div class="col-md-12">
+                  <div class="col-lg-9">
+                    <!-- <button onclick="myFunction()" type="button" class="btn btn-group-lg" data-toggle="collapse"
+                      data-target="#demo" style="width: 25%; background-color:  bisque;">
+                      MUA HÀNG -->
+                    <button>
+                      <p class="incon1">
+                        <a href="#"><img src="assets/img/icon-cart-round.png"></a>
+                        <span style="color: #c44e0f">
+                          <a href="javascript:void(0)" (click)="buy(data)" class="add-to-cart">Mua Hàng</a>
+                        </span>
+                      </p>
+                    </button>
+
+
+                    <p id="demo"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </div>
+
+    <hr>

@@ -1,0 +1,80 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <div style="display: flex">
+      <div class="container" style="padding: 0; position: relative">
+          <div class="container">
+              <h1 class="title">Danh sách sản phẩm</h1>
+              <div style="display: flex; justify-content: space-between">
+                  <div>
+                      <p>
+                          <a class="btn btn-primary" routerLink="/admin/addproducts">Thêm sản phẩm</a>
+                      </p>
+                  </div>
+                  <div class="search_box pull-right">
+                      <div class="input-group" style="justify-content: space-around">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-6">
+                              <form>
+                                Tìm Kiếm: <input type="text" name="keyword" id="keyword" [(ngModel)]="keyword"/>
+                            </form>
+                            </div>
+                            <div class="col-3">
+                              <button (click)="loadSearching(keyword)" style="margin-right: 0px; background-color: brown;">Tìm kiếm</button>
+                            </div>
+                           <div class="col-3">
+                            <button (click)="loadProducts()"style="margin-right: 0px; background-color: blue;" >Xem danh sách</button>
+
+                           </div>
+                          </div>
+                        </div>
+
+                      </div>
+                  </div>
+              </div>
+              <table class="table table-bordered">
+                  <thead>
+                  <tr style="text-align: center">
+                      <th style="text-align: center">Mã sản phẩm</th>
+                      <th style="text-align: center">Tên sản phảm</th>
+                      <th style="text-align: center">Giá tiền</th>
+                      <th style="text-align: center">Mô tả>
+                      <th style="text-align: center">Hạn sử dụng</th>
+                      <th style="text-align: center">Xuất sứ</th>
+                      <th style="text-align: center">Số lượng</th>
+                      <th style="text-align: center">Trạng thái</th>
+                      <th style="text-align: center">Ảnh</th>
+                      <th style="text-align: center">Tùy chỉnh</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let p of listProduct let i = index">
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.productId}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.productName}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.price | number:"1.0"}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.description}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.exprity}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.madeIn}}</td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">{{p.quantity}}</td>
+                      <td>
+                        <input [ngStyle]="{'color':p.status == true ? 'black' : 'red'}" style="border: none; width: 80px" type="text" active [(ngModel)]="p.status" name="status">
+                      </td>
+                      <td [ngStyle]="{'opacity':p.status == true ? 1 : 0.5}">
+                        <img src="{{p.productImage}}" style="width: 100px;" alt="">
+                      </td>
+                      <td class="editButtonproduct" >
+                          <a class="btn btn-primary btn-sm"
+                             routerLink="/admin/editprodcutadmin/{{p.productId}}" style="margin-top: 20px">Chỉnh sửa</a>
+                          <button (click)="deleteProduct(p.productId)" class="btn btn-sm btn-danger">Xóa</button>
+                          <a *ngIf="p.status == true" (click)="disable(p.productId)" class="btn btn-danger btn-sm"
+                             href="javascript:void(0)" style="margin-top: 20px">Hủy kích hoạt</a>
+                          <a *ngIf="p.status == false" (click)="enable(p.productId)" class="btn btn-dark btn-sm"
+                             href="javascript:void(0)" style="margin-top: 20px">Kích hoạt</a>
+                      </td>
+                  </tr>
+
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>

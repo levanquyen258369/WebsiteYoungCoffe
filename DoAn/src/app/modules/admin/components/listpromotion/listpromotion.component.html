@@ -1,0 +1,100 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <div style="display: flex">
+      <div class="container" style="padding: 0; position: relative">
+        <div class="container">
+          <h1 style="font-family: cursive; color: orange;">List Promotion</h1>
+        <div style="display: flex; justify-content: space-between">
+          <div sec:authorize="hasAnyRole('ADMIN','MANAGER')">
+            <p>
+              <a class="btn btn-primary" href="/admin/listPromotions/add">ADD PROMOTIONS</a>
+            </p>
+          </div>
+          <div class="search_box pull-right">
+            <div class="input-group">
+              <form>
+                Search: <input type="text" name="keyword" id="keyword" size="50" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr style="text-align: center">
+              <th><a style="color: black">
+                  Id</a></th>
+              <th>Name</th>
+              <th><a style="color: black">
+                  Discount</a></th>
+              <th>Apply day</th>
+              <th>Total usage</th>
+              <th>Max discount</th>
+              <th>Remain Apply</th>
+              <th>Status</th>
+              <th>Code</th>
+              <th style="text-align: center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: center"><a class="btn btn-primary btn-sm" style="margin-top: 0">Detail & Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- ///////////////////////////////// -->
+
+        <div>
+          <div class="text-center">
+          </div>
+          <nav class="pagination justify-content-center flex-wrap">
+
+            <li>
+              <a class="page-link">First</a>
+            </li>
+            <li>
+              <a class="page-link">Previous</a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link"> </a>
+            </li>
+            <li>
+              <a class="page-link"> </a>
+            </li>
+            <li>
+              <a class="page-link"></a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"> </a>
+            </li>
+            <li>
+              <a class="page-link"></a>
+            </li>
+            <li class="page-item">
+              <a class="page-link"></a>
+            </li>
+            <li>
+              <a class="page-link">...</a>
+            </li>
+            <li>
+              <a class="page-link">Next</a>
+            </li>
+            <li>
+              <a class="page-link">Last</a>
+            </li>
+          </nav>
+        </div>
+        <!-- ////////////////////////////// -->
+      </div>
+    </div>
+  </div>
+</div>

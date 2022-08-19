@@ -1,0 +1,52 @@
+
+ <div class="login-back">
+  <div class="container" style="margin-left: 500px">
+
+    <div class="top">
+      <h1 id="title" class="hidden"><span id="logo">Young <span>Coffee</span></span></h1>
+    </div>
+    <div class="login-box">
+      <div class="box-header">
+        <h2>KẾT NỐI TÀI KHOẢN!</h2>
+      </div>
+      <form id="loginForm" #loginForm="ngForm" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Tên Tài Khoản</label>
+          <br/>
+          <input type="text" class="form-control" id="userName" ngModel name="userName" formControlName="userName" aria-describedby="userNameHid" placeholder="Nhập tên tài khoản">
+          <small id="userNameHid"  *ngIf="formLogin.get('userName')?.errors?.['required'] && formLogin.get('userName')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Tên tài khoản không hợp lệ hoặc trống</p>
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="password">Mật Khẩu</label>
+          <br/>
+          <input type="password" class="form-control" id="password" ngModel name="password" formControlName="password" aria-describedby="passwordHid" placeholder="Nhập mật khẩu!">
+          <small id="passwordHid"  *ngIf="formLogin.get('password')?.errors?.['required'] && formLogin.get('password')?.dirty" class="form-text text-muted">
+           <p style="color: red;">Mật khẩu không hợp lệ hoặc trống</p>
+          </small>
+        </div>
+        <br/>
+        <span><input type="checkbox">Nhớ Mật Khẩu</span>
+        <br>
+        <button class="btn btn-primary" type="submit"  [formGroup]="formLogin">Đăng nhập</button>
+        <button class="btn btn-info" style="margin-top: 10px ;" type="reset">Nhập Lại</button>
+
+        <a routerLink="/user/forgot-password">
+          <p class="small">Quên Mật Khẩu</p>
+        </a>
+
+      </form>
+
+      <hr>
+      <p>Hãy trở thành một thành viên của chúng tôi: <a routerLink="/user/register" >Đăng Ký!</a></p>
+    </div>
+  </div>
+ </div>
+
+
+
+
+
+
+

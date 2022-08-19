@@ -1,0 +1,63 @@
+<div class="container" style="margin-left: 500px">
+  <div class="top">
+      <h1 id="title" class="hidden"><span id="logo">Young <span>Coffee</span></span></h1>
+  </div>
+  <div class="login-box">
+      <div class="box-header">
+          <h2>Đăng Ký Tài Khoản</h2>
+      </div>
+      <form id="loginRegister" [formGroup]="formRegister" (ngSubmit)="addRegister()">
+          <br/>
+          <p>Họ & Tên</p>
+          <input type="text" id="fullName" placeholder="*Nhập họ tên đầy đủ" required formControlName="fullName">
+          <small id="fullNameHid"  *ngIf="formRegister.get('fullName')?.errors?.['required'] && formRegister.get('fullName')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Họ và tên không được để trống!</p>
+          </small>
+          <br/>
+          <p>Email</p>
+          <input type="text" id="email" placeholder="*Nhập địa chỉ email của bạn" required formControlName="email">
+          <small id="emailHid"  *ngIf="formRegister.get('email')?.errors?.['required'] && formRegister.get('email')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Email không được để trống!</p>
+          </small>
+          <br/>
+          <p>Số Điện Thoại</p>
+          <input type="text" id="phone" placeholder="*Nhập số điện thoại" required formControlName="phone">
+          <small id="phoneHid"  *ngIf="formRegister.get('phone')?.errors?.['required'] && formRegister.get('phone')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Số điện thoại không được để trống!</p>
+          </small>
+          <br>
+          <p>Địa chỉ</p>
+          <input type="text" id="address" placeholder="*Nhập địa chỉ" required formControlName="address">
+          <small id="phoneHid"  *ngIf="formRegister.get('address')?.errors?.['required'] && formRegister.get('address')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Số điện thoại không được để trống!</p>
+          </small>
+          <br/>
+          <p>Tên tài khoản</p>
+          <input type="text" id="userName" placeholder="*Nhập tên tài khoản mà bạn muốn tại" required formControlName="userName">
+          <small id="userNameHid"  *ngIf="formRegister.get('userName')?.errors?.['required'] && formRegister.get('userName')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Tên tài khoản không hợp lệ hoặc  để trống!</p>
+          </small>
+          <br/>
+          <p>Nhập mật khẩu</p>
+          <input type="password" id="password" placeholder="*Mật Khẩu" required  formControlName="password">
+          <small id="passwordHid"  *ngIf="formRegister.get('password')?.errors?.['required'] && formRegister.get('password')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Mật khẩu không hợp lệ hoặc trống</p>
+           </small>
+          <br>
+          <p>Nhập lại mật khẩu</p>
+          <input type="password" id="password" placeholder="*Nhập lại mật khẩu" required  formControlName="password">
+          <small id="passwordHid"  *ngIf="formRegister.get('password')?.errors?.['required'] && formRegister.get('password')?.dirty" class="form-text text-muted">
+            <p style="color: red;">Mật khẩu không hợp lệ hoặc trống</p>
+           </small>
+          <br>
+          <span><input type="checkbox" formControlName="status"> Tôi đồng ý với những điều khoản của YoungCoffee</span>
+          <br>
+          <button type="submit" class="btn btn-primary" [formGroup]="formRegister">Đăng Ký</button>
+          <br/>
+      </form>
+  </div>
+
+
+
+
+</div>

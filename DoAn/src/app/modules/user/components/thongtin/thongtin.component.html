@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row" >
+    <h2 style="margin-top: 20px; text-align: center;">THÔNG TIN TÀI KHOẢN!</h2>
+    <form class="row g-3" method="post" enctype="multipart/form-data" [formGroup]="formEditThongTin" (ngSubmit)="editThongTin()"  >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Họ và Tên</label>
+        <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="{{p.fullName}}">
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Số điện thoại</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+      </div>
+      <div class="col-6">
+        <label for="inputAddress" class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control" id="address" formControlName="address" >
+      </div>
+      <div class="col-6">
+        <label for="inputAddress2" class="form-label">Emmail</label>
+        <input type="email" class="form-control" id="inputAddress2" formControlName="email">
+      </div>
+      <div class="col-md-12">
+        <label for="inputCity" class="form-label">Tên tài khoản</label>
+        <input type="text" class="form-control" id="inputCity" value="{{p}}">
+      </div>
+      <!-- <button [disabled]="formEditThongTin.invalid" type="submit" class="btn btn-primary">Lưu thay đổi</button> -->
+      <div class="col-md-6 trangchu">
+        <button routerLink="/user/home"class="btn btn-primary ">
+          <i class="fa-solid fa-left"></i>
+        Về Trang Chủ</button>
+      </div>
+      <div class="col-md-6">
+        <button routerLink="/admin/home"class="btn btn-success quanly">
+          <i class="fa-solid fa-right"></i>
+         Tới trang Quản Lý</button>
+      </div>
+
+    </form>
+         </div>
+</div>
